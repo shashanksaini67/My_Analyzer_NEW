@@ -1,3 +1,5 @@
+# Views.py
+# I have created this file - Harry
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -8,6 +10,12 @@ def index(request):
     # return HttpResponse("Home")
 
 
+def others(request):
+    sites = ['''<h1>For Entertainment  </h1> <a href="https://www.youtube.com/"> Youtube Videos</a> ''',
+             '''<h1>For Interaction  </h1> <a href="https://www.facebook.com/"> Facebook</a> ''',
+             '''<h1>For Insight  </h1> <a href="https://www.ted.com/talks"> Ted Talks</a> ''',
+             '''<h1>For Internship  </h1> <a href="https://www.internshala.com">Internship</a> ''']
+    return HttpResponse(sites)
 
 def analyze(request):
     #Get the text
@@ -59,3 +67,17 @@ def analyze(request):
         return render(request, 'analyze.html', params)
     else:
         return HttpResponse("Error")
+
+# def capfirst(request):
+#     return HttpResponse("capitalize first")
+#
+# def newlineremove(request):
+#     return HttpResponse("newline remove first")
+#
+#
+# def spaceremove(request):
+#     return HttpResponse("space remover back")
+#
+# def charcount(request):
+#     return HttpResponse("charcount ")
+
